@@ -2,34 +2,34 @@
 import time
 
 def play_round(player1, player2):
-    gestures = ["kivi", "käärid", "paber"]
+    žest = ["kivi", "käärid", "paber"]
 
     print("kivi... käärid... paber... üks... kaks... kolm!")
 
-    gesture1 = input(f"{player1}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
-    while gesture1 not in gestures:
+    žest1 = input(f"{player1}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
+    while žest1 not in žest:
         print("Viga: Vali kehtiv žest!")
-        gesture1 = input(f"{player1}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
+        žest1 = input(f"{player1}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
 
-    gesture2 = input(f"{player2}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
-    while gesture2 not in gestures:
+    žest2 = input(f"{player2}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
+    while žest2 not in žest:
         print("Viga: Vali kehtiv žest!")
-        gesture2 = input(f"{player2}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
+        žest2 = input(f"{player2}, loe 'kolm' ja näita žesti (kivi/käärid/paber): ").lower()
 
-    print(f"{player1} näitas {gesture1}")
-    print(f"{player2} näitas {gesture2}")
+    print(f"{player1} näitas {žest1}")
+    print(f"{player2} näitas {žest2}")
 
-    if (gesture1 == "paber" and gesture2 == "kivi"):
+    if (žest1 == "paber" and žest2 == "kivi"):
         return f"{player1} võidab! Paber mähib kivi ümber."
-    elif (gesture1 == "kivi" and gesture2 == "käärid"):
+    elif (žest1 == "kivi" and žest2 == "käärid"):
         return f"{player1} võidab! Kivi tuhmib või purustab käärid."
-    elif (gesture1 == "käärid" and gesture2 == "paber"):
+    elif (žest1 == "käärid" and žest2 == "paber"):
         return f"{player1} võidab! Käärid lõikavad paberit."
-    elif (gesture2 == "paber" and gesture1 == "kivi"):
+    elif (žest2 == "paber" and žest1 == "kivi"):
         return f"{player2} võidab! Paber mähib kivi ümber."
-    elif (gesture2 == "kivi" and gesture1 == "käärid"):
+    elif (žest2 == "kivi" and žest1 == "käärid"):
         return f"{player2} võidab! Kivi tuhmib või purustab käärid."
-    elif (gesture2 == "käärid" and gesture1 == "paber"):
+    elif (žest2 == "käärid" and žest1 == "paber"):
         return f"{player2} võidab! Käärid lõikavad paberit."
     else:
         return "Viik"
